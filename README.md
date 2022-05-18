@@ -1,6 +1,6 @@
 # FestivalProject
 
-1. Periode 1.4 - Festival Project
+1. Periode 1.4 - Festival project school
 
 <div align="center">
  <a href="https://github.com/DeanCash" target="_blank">
