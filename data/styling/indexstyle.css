@@ -117,6 +117,7 @@ body {
     height: 25em;
     margin: 5px;
     padding: 1em;
+    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
     /* border: 0.15em cyan solid; */
     background-color: rgba(58, 45, 66, 0.2);
 }
