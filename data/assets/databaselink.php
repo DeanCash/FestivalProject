@@ -1,6 +1,6 @@
 <?php
     $host     = "localhost";
-    $dbname   = "";
+    $dbname   = "festivalproject";
     $user     = "root";
     $password = "";
 
@@ -14,7 +14,8 @@
 
     //* DATA = "text"   ||   MODE = [log - warn - error]
 
-    function debug_to_console($data, $mode) {
+    function debug_to_console($data, $mode)
+    {
         if ($mode == "log") {
             $output = $data;
             if (is_array($output))

@@ -1,5 +1,1 @@
-/*
-    when hover on navbar item, apply to everything
-    except hovered item
-*/
-
+console.log("Website Loaded!");
