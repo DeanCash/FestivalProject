@@ -4,6 +4,7 @@
 :root {
     --sample-color:rgba(57, 67, 86, 1);
     --gray: rgba(21, 24, 29, 1);
+
     --white: rgba(238, 249, 247, 1);
     --oswald: "Oswald";
     --body-bg-color: linear-gradient(90deg, rgb(33, 35, 40) 50%, rgb(28, 31, 36) 65%);
@@ -13,77 +14,9 @@
 /* - - - - - - - */
 /**  UserNavBar  */
 /* - - - - - - - */
-.usernav {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 3.5em;
-    font-family: var(--oswald);
-    overflow: hidden;
-    font-size: 1.5em;
-    box-shadow: 0 0.1em 20px 10px rgb(87, 71, 90);
-    z-index: 1;
-}
-.usernav-blur {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    z-index: 2;
-}
-.usernav img {
-    margin-inline: 25px;
-    margin-block: 15px;
-    top: 50%;
-    z-index: 3;
-}
-.usernav-ul {
-    display: flex;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    flex-direction: row;
-    align-items: center;
-    z-index: 2;
-}
-.usernav-ul a li {
-    text-decoration: none;
-    list-style: none;
-    color: var(--white);
-    padding: 2em;
-    transition: 200ms;
-    z-index: 3;
-}
-.usernav-ul a li p {
-    margin: 0;
-    padding: 0;
-    transition: 150ms;
-}
-.usernav-ul a {
-    text-decoration: none;
-    z-index: 3;
-}
 
-.usernav-ul a:hover li {
-    background-color: rgb(90, 42, 91);
-    transition: 150ms;
-}
-.usernav-ul a:hover li p {
-    transform: scale(1.1);
-    transition: 150ms;
-}
-.usernav-ul:hover a > *:not(*:hover) {
-    filter: blur(2px);
-    transition: 150ms;
-}
-.homelink {
-    margin: 0;
-    padding: 0;
-    border: 0 none;
-    display: flex;
-}
+
+
 /* - - - - - - - */
 /**  Index Page  */
 /* - - - - - - - */
@@ -191,15 +124,68 @@ body {
     top: 40%;
     transform: translateX(-50%);
     box-shadow: 0 0 10px 1px rgb(10, 10, 10);
-    padding: 3em 10em;
-}
-#contact-title {
-    font-size: 2em;
-    display: flex;
-    justify-content: center;
-}
-.contact-content {
+    width: 10em;
+    height: fit-content;
+    background-color: rgba(58, 45, 66, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    min-width: max(6em, 50%);
+    padding: 1em;
 }
+#contact-top-div h2 {
+    font-size: 2em;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.contact-form input {
+    min-width: max(6em, 60%);
+    margin-block: 0.5em;
+}
+.contact-form input {
+    min-width: max(6em, 60%);
+    margin-block: 0.5em;
+    border: solid rgb(192, 41, 184) 0.1em;
+    background-color: var(--gray);
+    border-radius: 0.7em;
+    padding: 0.5em;
+    font-weight: 600;
+    color: var(--white);
+    transition: 200ms;
+}
+.contact-form input:hover {
+    border: solid rgb(41, 192, 84) 0.1em;
+    transition: 200ms;
+    border-radius: 1em;
+}
+.contact-form textarea {
+    min-width: max(6em, 60%);
+    height: 100px;
+    resize: none;
+    margin-block: 0.5em;
+    background-color: var(--gray);
+    border: solid rgb(192, 41, 184) 0.1em;
+    border-radius: 0.7em;
+    padding: 0.5em;
+    font-weight: 600;
+    color: var(--white);
+    transition: 200ms;
+}
+.contact-form textarea:hover {
+    border: solid rgb(41, 192, 84) 0.1em;
+    transition: 200ms;
+}
+#EmailSubmit {
+    min-width: max(6em, 10%);
+}
+
+/* - - - - - - - */
+/** Line-Up Page */
+/* - - - - - - - */

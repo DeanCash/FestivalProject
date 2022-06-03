@@ -12,10 +12,19 @@
     <?php require("assets/usernavbar.php"); ?>
 
     <div id="contact-top-div">
-        <h2 id="contact-title">Contact</h2>
-        <div class="content-title">Email: Sample@Email.com</div>
-        <div class="content-title">Number: 012345678</div>
+        <h2>Contact</h2>
+        <form method="post" class="contact-form">
+            <input type="text" name="email" placeholder="Example@Email.com" required>
+            <textarea type="text" name="message" placeholder="Message" required></textarea>
+            <input type="submit" name="EmailSubmit" value="send" id="EmailSubmit" required>
+        </form>
     </div>
+    <?php
+        if(isset($_POST['EmailSubmit'])) {
+            $email = $_POST['email'];
+            $message = $_POST['message'];
+        }
+    ?>
 <script src="scripts/indexscript.js" defer></script>
 </body>
 </html>
