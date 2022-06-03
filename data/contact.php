@@ -10,5 +10,12 @@
 </head>
 <body>
     <?php require("assets/usernavbar.php"); ?>
+
+    <div id="contact-top-div">
+        <h2 id="contact-title">Contact</h2>
+        <div class="content-title">Email: Sample@Email.com</div>
+        <div class="content-title">Number: 012345678</div>
+    </div>
+<script src="scripts/indexscript.js" defer></script>
 </body>
 </html>

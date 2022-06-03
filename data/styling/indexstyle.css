@@ -10,9 +10,9 @@
     /* --body-bg-color: linear-gradient(10deg, rgba(6,16,33,1) 60%, rgb(17, 27, 46) 85%); */
 }
 
-/* - - - - - */
-/*           */
-/* - - - - - */
+/* - - - - - - - */
+/**  UserNavBar  */
+/* - - - - - - - */
 .usernav {
     display: flex;
     position: relative;
@@ -84,9 +84,9 @@
     border: 0 none;
     display: flex;
 }
-/* - - - - - */
-/*           */
-/* - - - - - */
+/* - - - - - - - */
+/**  Index Page  */
+/* - - - - - - - */
 
 body {
     overflow-x: hidden;
@@ -180,4 +180,26 @@ body {
 }
 #bottom-page-margin {
     height: 8em;
+}
+
+/* - - - - - - - */
+/** Contact Page */
+/* - - - - - - - */
+#contact-top-div {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
+    padding: 3em 10em;
+}
+#contact-title {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+}
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
