@@ -10,6 +10,11 @@
 </head>
 <body>
     <?php require("assets/usernavbar.php"); ?>
+
+    <div id>
+
+    </div>
+
 <script src="scripts/indexscript.js" defer></script>
 </body>
 </html>

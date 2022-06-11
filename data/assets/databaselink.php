@@ -8,7 +8,7 @@
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
         debug_to_console("VERBINDING DATABASE GELUKT", "log");
     } catch (PDOException $ex) {
-        debug_to_console("VERBINDING DATABASE FAILED.", "error");
+        debug_to_console("VERBINDING DATABASE FAILED. || Try checking XAMPP", "error");
     }
 
 

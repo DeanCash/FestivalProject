@@ -1,5 +1,4 @@
 <nav class="usernav">
-    <div class="usernav-blur"></div>
     <a href="/FestivalProject/data/index.php" class="homelink">
         <img src="/FestivalProject/data/media/musiclogo.png"/>
     </a>
