@@ -38,7 +38,6 @@
             </div>
         </div>
     </div>
-    <div id="bottom-page-margin"></div>
 <script src="scripts/indexscript.js" defer></script>
 </body>
 </html>

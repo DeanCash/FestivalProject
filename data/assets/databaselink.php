@@ -6,36 +6,26 @@
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
-        debug_to_console("VERBINDING DATABASE GELUKT", "log");
+        debug_to_console("CONNECTION DATABASE SUCCESS", "log");
     } catch (PDOException $ex) {
-        debug_to_console("VERBINDING DATABASE FAILED. || Try checking XAMPP", "error");
+        debug_to_console("CONNECTION DATABASE FAILED. || Try checking XAMPP", "error");
     }
 
 
     //* DATA = "text"   ||   MODE = [log - warn - error]
 
-    function debug_to_console($data, $mode)
+    function debug_to_console(string $data, string $mode)
     {
         if ($mode == "log") {
-            $output = $data;
-            if (is_array($output))
-                $output = implode(',', $output);
-        
-            echo "<script>console.log('" . $output . "' );</script>";
+            echo "<script>console.log('" . $data . "' );</script>";
         }
+        
         if ($mode == "warn") {
-            $output = $data;
-            if (is_array($output))
-                $output = implode(',', $output);
-        
-            echo "<script>console.warn('" . $output . "' );</script>";
+            echo "<script>console.warn('" . $data . "' );</script>";
         }
+
         if ($mode == "error") {
-            $output = $data;
-            if (is_array($output))
-                $output = implode(',', $output);
-        
-            echo "<script>console.error('" . $output . "' );</script>";
+            echo "<script>console.error('" . $data . "' );</script>";
         }
     }
 ?>

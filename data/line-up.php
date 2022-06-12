@@ -11,8 +11,8 @@
 <body>
     <?php require("assets/usernavbar.php"); ?>
 
-    <div id>
-
+    <div class="">
+        
     </div>
 
 <script src="scripts/indexscript.js" defer></script>

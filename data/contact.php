@@ -11,17 +11,19 @@
 <body>
     <?php require("assets/usernavbar.php"); ?>
 
-    <div id="contact-top-div">
+    <div class="contact-top-div">
         <h2>Contact</h2>
         <form method="post" class="contact-form">
-            <input type="text" name="email" placeholder="Example@Email.com" required>
-            <textarea type="text" name="message" placeholder="Message" required></textarea>
-            <input type="submit" name="EmailSubmit" value="send" id="EmailSubmit" required>
+            <input type="text" name="email" placeholder="Example@Email.com" class="contact-email" required>
+            <input type="text" name="number" placeholder="(optional) Phone Number" class="contact-phone">
+            <textarea type="text" name="message" placeholder="Message" class="contact-textarea" required></textarea>
+            <input type="submit" name="EmailSubmit" value="send" class="contact-submit" required>
         </form>
     </div>
     <?php
         if(isset($_POST['EmailSubmit'])) {
             $email = $_POST['email'];
+            $number = $_POST['number'];
             $message = $_POST['message'];
         }
     ?>

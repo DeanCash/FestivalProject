@@ -10,9 +10,9 @@
     /* --body-bg-color: linear-gradient(10deg, rgba(6,16,33,1) 60%, rgb(17, 27, 46) 85%); */
 }
 
-/* - - - - - - - */
+/*! - - - - - - - */
 /**  UserNavBar  */
-/* - - - - - - - */
+/*! - - - - - - - */
 .usernav {
     display: flex;
     position: relative;
@@ -77,9 +77,9 @@
     border: 0 none;
     display: flex;
 }
-/* - - - - - - - */
+/*! - - - - - - - */
 /**  Index Page  */
-/* - - - - - - - */
+/*! - - - - - - - */
 
 body {
     overflow-x: hidden;
@@ -100,6 +100,7 @@ body {
     gap: 5em;
     width: 100%;
     box-sizing: border-box;
+    padding-bottom: 10em;
 }
 .top-content-subclass {
     /* border: 0.15em cyan solid; */
@@ -171,33 +172,85 @@ body {
     width: 45%;
     padding: 2em;
 }
-#bottom-page-margin {
-    height: 8em;
-}
 
-/* - - - - - - - */
+/*! - - - - - - - */
 /** Contact Page */
-/* - - - - - - - */
-#contact-top-div {
+/*! - - - - - - - */
+
+/* .contact-top-div {
     min-width: max(20em, 30px);
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translateX(-50%);
     box-shadow: 0 0 10px 1px rgb(10, 10, 10);
-    /* padding: 3em 10em; */
-}
-/* #contact-title {
-    font-size: 2em;
-    display: flex;
-    justify-content: center;
+    padding: 3em 10em;
 } */
-.contact-content {
+
+.contact-top-div {
+    font-size: 1.2em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: fit-content;
+    width: max(20%, 30%);
+    margin-inline: auto;
+    margin-top: 20vh;
+    padding: 1em 2em 2em;
+    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
 }
-.contact-content textarea {
-    max-width: min(20em, 10px);
+
+.contact-top-div > * {
+    padding-block: 1em;
+}
+
+.contact-top-div h2 {
+    margin: 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.contact-form > * {
+    border-inline: transparent;
+    border-top: transparent;
+    border-style: solid;
+    border-width: 2px;
+    width: 20em;
+    height: 1.5em;
+    align-self: center;
+    background-color: transparent;
+    padding: 0.5em;
+    color: var(--white);
+}
+
+.contact-form textarea {
+    height: 8em;
     resize: none;
+    width: 125%;
 }
+
+.contact-submit {
+    border: 2px solid ;
+    width: fit-content;
+    padding-inline: 1em;
+    height: fit-content;
+    color: var(--white);
+    border-radius: 10px;
+    border-color: rgb(238, 80, 255);
+    transition: 200ms;
+}
+
+.contact-submit:hover {
+    border-color: rgb(80, 255, 144);
+}
+
+/*! - - - - - - - */
+/**  Line-Up Page */
+/*! - - - - - - - */
+

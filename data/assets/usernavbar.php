@@ -9,11 +9,13 @@
         <a href="/FestivalProject/data/contact.php"><li class="usernav-ul-li"><p>Contact</p></li></a>
     </ul>
 </nav>
+
 <style>
-    .usernav {
+.usernav {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 3.5em;
     font-family: var(--oswald);
     overflow: hidden;
@@ -21,25 +23,19 @@
     box-shadow: 0 0.1em 20px 10px rgb(87, 71, 90);
     z-index: 1;
 }
-.usernav-blur {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    z-index: 2;
-}
-.usernav img {
+.usernav a img {
     margin-inline: 25px;
     margin-block: 15px;
-    top: 50%;
     z-index: 3;
+    max-width: 75px;
+    max-height: 75px;
 }
 .usernav-ul {
     display: flex;
     position: relative;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
     flex-direction: row;
     align-items: center;
@@ -76,9 +72,12 @@
     transition: 150ms;
 }
 .homelink {
+    position: relative;
     margin: 0;
     padding: 0;
     border: 0 none;
     display: flex;
+    height: 100%;
+    width: fit-content;
 }
 </style>
