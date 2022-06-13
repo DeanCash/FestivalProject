@@ -45,7 +45,7 @@
         <h2>News Items</h2>
         <div class="newsitems-wrapper">
             <?php
-                $query = "SELECT * FROM newsitems";
+                $query = "SELECT * FROM newsitems ORDER BY niid desc";
                 $stm = $conn->prepare($query);
                 if ($stm->execute()) {
                     $results = $stm->fetchAll(PDO::FETCH_OBJ);
