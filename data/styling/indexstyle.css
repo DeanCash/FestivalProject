@@ -10,6 +10,13 @@
     /* --body-bg-color: linear-gradient(10deg, rgba(6,16,33,1) 60%, rgb(17, 27, 46) 85%); */
 }
 
+.page-content-split {
+    width: 80vw;
+    border-style: solid;
+    border-color: var(--white);
+    background-color: var(--white);
+}
+
 /*! - - - - - - - */
 /**  UserNavBar  */
 /*! - - - - - - - */
@@ -100,7 +107,7 @@ body {
     gap: 5em;
     width: 100%;
     box-sizing: border-box;
-    padding-bottom: 10em;
+    margin-bottom: 10em;
 }
 .top-content-subclass {
     /* border: 0.15em cyan solid; */
@@ -177,16 +184,6 @@ body {
 /** Contact Page */
 /*! - - - - - - - */
 
-/* .contact-top-div {
-    min-width: max(20em, 30px);
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
-    padding: 3em 10em;
-} */
-
 .contact-top-div {
     font-size: 1.2em;
     display: flex;
@@ -196,7 +193,7 @@ body {
     min-width: fit-content;
     width: max(20%, 30%);
     margin-inline: auto;
-    margin-top: 20vh;
+    margin-top: 10vh;
     padding: 1em 2em 2em;
     box-shadow: 0 0 10px 1px rgb(10, 10, 10);
 }
@@ -260,9 +257,10 @@ body {
 
 .newsitems-top-wrapper {
     position: relative;
-    background-color: cyan;
     min-height: 20em;
     padding: 0.8em;
+    margin-top: 6em;
+    margin-bottom: 5em;
 }
 
 .newsitems-top-wrapper h2 {
@@ -273,20 +271,23 @@ body {
 
 .newsitems-wrapper {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
 }
 
 .news-item {
-    height: 8em;
-    background-color: red;
-    width: 30%;
+    display: flex;
+    align-items: center;
+    height: 14em;
+    flex-wrap: no-wrap;
+    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
+    background-color: rgba(58, 45, 66, 0.2);
+    width: 90%;
 }
 
 .news-item p {
-    margin-top: 0.5em;
+    margin-inline: 1em;
 }
 
 .news-item-bg {
@@ -294,15 +295,46 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-width: 20%;
+    height: 100%;
 }
 
-/**   when screen becomes smaller than 400px reduce font size   */
-@media only screen and (max-width: 700px) {
+/**   when screen becomes smaller than 600px reduce font size   */
+@media only screen and (max-width: 600px) {
     body {
         font-size: 0.5em;
     }
 
     h2 {
-        font-size: 0.7em;
+        font-size: 1em;
     }
+}
+
+/*! - - - - - - - */
+/**  Line-Up Page */
+/*! - - - - - - - */
+
+.top-lineup-content-wrapper p {
+    margin: 0 0 2em 0;
+    width: 70%;
+    text-align: center;
+}
+.top-lineup-content-wrapper {
+    position: relative;
+    margin-top: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lineup-content-wrapper {
+    display: grid;
+    gap: 2em;
+}
+
+.artist-card {
+    max-width: 4em;
+    max-height: 4em;
+    background-color: red;
 }

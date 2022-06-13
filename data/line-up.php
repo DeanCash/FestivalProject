@@ -11,8 +11,18 @@
 <body>
     <?php require("assets/usernavbar.php"); ?>
 
-    <div class="">
-        
+    <div class="top-lineup-content-wrapper">
+        <h2 style="font-size: 2em;">Line Up page</h2>
+        <p>Here you can view all arists and their concerts, and buy tickets to them</p>
+        <div class="lineup-content-wrapper">
+            <div class="artist-card">text</div>
+            <div class="artist-card">text</div>
+            <div class="artist-card">text</div>
+            <div class="artist-card">text</div>
+            <div class="artist-card">text</div>
+            <div class="artist-card">text</div>
+            <div class="artist-card">text</div>
+        </div>
     </div>
 
 <script src="scripts/indexscript.js" defer></script>

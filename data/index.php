@@ -9,7 +9,7 @@
     <link rel="icon" href="media/musiclogo.ico">
     <title>Home - Festival</title>
 </head>
-<body>
+<body class="body-index">
     <?php require("assets/usernavbar.php"); ?>
 
     <div class="top-content-wrapper">
@@ -39,15 +39,29 @@
         </div>
     </div>
     
-    <hr>
+    <hr class="page-content-split">
 
     <div class="newsitems-top-wrapper">
         <h2>News Items</h2>
         <div class="newsitems-wrapper">
-            <div class="news-item">
-                <div class="news-item-bg"></div>
-                <p>Text</p>
-            </div>
+            <?php
+                $query = "SELECT * FROM newsitems";
+                $stm = $conn->prepare($query);
+                if ($stm->execute()) {
+                    $results = $stm->fetchAll(PDO::FETCH_OBJ);
+                    if (!empty($results)) {
+                        foreach ($results as $item) {
+                            echo
+                            "<div class='news-item'>".
+                                "<div style='background: url($item->urllink); background-position: center; background-repeat: no-repeat; background-size: cover; min-width: 20%; height: 100%;'></div>".
+                                "<p>$item->content</p>".
+                            "</div>";
+                        }
+                    } else {
+                        echo "No recent news!";
+                    }
+                }
+            ?>
         </div>
     </div>
 <script src="scripts/indexscript.js" defer></script>
