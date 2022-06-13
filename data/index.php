@@ -12,7 +12,7 @@
 <body>
     <?php require("assets/usernavbar.php"); ?>
 
-    <div id="top-content-wrapper">
+    <div class="top-content-wrapper">
         <div class="top-content-subclass">
             <div id="top-content-first-text">Welcome to Amerijck's website! Here you can buy tickets to any of our upcoming EDM events.</div>
             <div id="top-content-first-image-div">
@@ -35,6 +35,18 @@
                 <div id="top-content-first-image">
                     <img src="media/festivalimg3.png">
                 </div>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="newsitems-top-wrapper">
+        <h2>News Items</h2>
+        <div class="newsitems-wrapper">
+            <div class="news-item">
+                <div class="news-item-bg"></div>
+                <p>Text</p>
             </div>
         </div>
     </div>

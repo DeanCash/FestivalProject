@@ -90,7 +90,7 @@ body {
     font-family: "Noto Sans";
 }
 
-#top-content-wrapper {
+.top-content-wrapper {
     /* border: 0.15em red solid; */
     margin-top: 6em;
     display: flex;
@@ -251,6 +251,58 @@ body {
 }
 
 /*! - - - - - - - */
-/**  Line-Up Page */
+/**  News Items   */
 /*! - - - - - - - */
 
+.newsitems-top-wrapper p {
+    margin: 0;
+}
+
+.newsitems-top-wrapper {
+    position: relative;
+    background-color: cyan;
+    min-height: 20em;
+    padding: 0.8em;
+}
+
+.newsitems-top-wrapper h2 {
+    margin: 0 0 1em 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+.newsitems-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 1em;
+}
+
+.news-item {
+    height: 8em;
+    background-color: red;
+    width: 30%;
+}
+
+.news-item p {
+    margin-top: 0.5em;
+}
+
+.news-item-bg {
+    background: url('https://i.pinimg.com/550x/f5/6b/ae/f56baef86aed6c261c422402aab59065.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/**   when screen becomes smaller than 400px reduce font size   */
+@media only screen and (max-width: 700px) {
+    body {
+        font-size: 0.5em;
+    }
+
+    h2 {
+        font-size: 0.7em;
+    }
+}
