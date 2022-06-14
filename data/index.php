@@ -14,25 +14,25 @@
 
     <div class="top-content-wrapper">
         <div class="top-content-subclass">
-            <div id="top-content-first-text">Welcome to Amerijck's website! Here you can buy tickets to any of our upcoming EDM events.</div>
-            <div id="top-content-first-image-div">
-                <div id="top-content-first-image">
+            <div class="top-content-first-text">Welcome to Amerijck's website! Here you can buy tickets to any of our upcoming EDM events.</div>
+            <div class="top-content-first-image-div">
+                <div class="top-content-first-image">
                     <img src="media/festivalimg1.png">
                 </div>
             </div>
         </div>
         <div class="top-content-subclass">
-            <div id="top-content-first-image-div2">
-                <div id="top-content-first-image2">
+            <div class="top-content-first-image-div2">
+                <div class="top-content-first-image2">
                     <img src="media/festivalimg2.png">
                 </div>
             </div>
-            <div id="top-content-first-text">A specific artist you are looking for? You can find them and their concerts in the Line-Up page!</div>
+            <div class="top-content-first-text">A specific artist you are looking for? You can find them and their concerts in the Line-Up page!</div>
         </div>
         <div class="top-content-subclass">
-            <div id="top-content-first-text">If you need to get in contact with us, you can find all the details in the contact page.</div>
-            <div id="top-content-first-image-div">
-                <div id="top-content-first-image">
+            <div class="top-content-first-text">If you need to get in contact with us, you can find all the details in the contact page.</div>
+            <div class="top-content-first-image-div">
+                <div class="top-content-first-image">
                     <img src="media/festivalimg3.png">
                 </div>
             </div>

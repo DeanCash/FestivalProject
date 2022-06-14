@@ -1,3 +1,4 @@
+<?php require("assets/databaselink.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,16 @@
         <div class="lineup-content-wrapper">
             <div class="artist-card">text</div>
             <div class="artist-card">text</div>
+            <?php
+                // $query = "SELECT * FROM aaa";
+                // $stm = $conn->prepare($query);
+                // if ($stm->execute()) {
+                    // $results = $stm->fetchAll(PDO::FETCH_OBJ);
+                    // foreach ($result as $artist) {
+
+                    // }
+                // }
+            ?>
             <div class="artist-card">text</div>
             <div class="artist-card">text</div>
             <div class="artist-card">text</div>

@@ -17,6 +17,26 @@
     background-color: var(--white);
 }
 
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    /* background: red */
+    background: var(--body-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #888;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+}
+
 /*! - - - - - - - */
 /**  UserNavBar  */
 /*! - - - - - - - */
@@ -123,24 +143,24 @@ body {
     box-shadow: 0 0 10px 1px rgb(10, 10, 10);
     background-color: rgba(58, 45, 66, 0.2);
 }
-#top-content-first-image-div {
+.top-content-first-image-div {
     /* border: 0.15em yellow solid; */
     display: flex;
     justify-content: center;
     position: relative;
     width: 45%;
 }
-#top-content-first-image {
+.top-content-first-image {
     /* border: 0.15em green solid; */
     position: absolute;
     max-width: max(30em, 10em);
     top: 10%;
     box-shadow: 20px 20px 10px rgb(72, 33, 76);
 }
-#top-content-first-image img {
+.top-content-first-image img {
     width: 100%;
 }
-#top-content-first-text {
+.top-content-first-text {
     /* border: 0.15em purple solid; */
     display: flex;
     justify-content: center;
@@ -149,27 +169,28 @@ body {
     overflow-x: hidden;
     width: 55%;
     padding: 2em;
+    overflow: hidden;
 }
 
 
-#top-content-first-image-div2 {
+.top-content-first-image-div2 {
     /* border: 0.15em yellow solid; */
     display: flex;
     justify-content: center;
     position: relative;
     width: 55%;
 }
-#top-content-first-image2 {
+.top-content-first-image2 {
     /* border: 0.15em green solid; */
     position: absolute;
     max-width: max(30em, 10em);
     top: 10%;
     box-shadow: 20px 20px 10px rgb(72, 33, 76);
 }
-#top-content-first-image2 img {
+.top-content-first-image2 img {
     width: 100%;
 }
-#top-content-first-text2 {
+.top-content-first-text2 {
     /* border: 0.15em purple solid; */
     display: flex;
     justify-content: center;
@@ -224,6 +245,7 @@ body {
     background-color: transparent;
     padding: 0.5em;
     color: var(--white);
+    font-family: "Noto Sans";
 }
 
 .contact-form textarea {
@@ -233,7 +255,9 @@ body {
 }
 
 .contact-submit {
-    border: 2px solid ;
+    font-weight: 600;
+    font-family: "Noto Sans";
+    border: 3px solid ;
     width: fit-content;
     padding-inline: 1em;
     height: fit-content;
