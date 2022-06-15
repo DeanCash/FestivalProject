@@ -1,3 +1,7 @@
+<?php
+    include("utilfunctions.php");
+?>
+
 <nav class="usernav">
     <a href="/FestivalProject/data/index.php" class="homelink">
         <img src="/FestivalProject/data/media/musiclogo.png"/>
@@ -7,6 +11,7 @@
         <!-- <a href="/FestivalProject/data/news.php"><li class="usernav-ul-li"><p>News</p></li></a> -->
         <a href="/FestivalProject/data/line-up.php"><li class="usernav-ul-li"><p>Line-Up</p></li></a>
         <a href="/FestivalProject/data/contact.php"><li class="usernav-ul-li"><p>Contact</p></li></a>
+        <a href="/FestivalProject/data/login.php"><li class="usernav-ul-li"><p>Login</p></li></a>
     </ul>
 </nav>
 

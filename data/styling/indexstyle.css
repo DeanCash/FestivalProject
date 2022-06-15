@@ -5,9 +5,15 @@
     --sample-color:rgba(57, 67, 86, 1);
     --gray: rgba(21, 24, 29, 1);
     --white: rgba(238, 249, 247, 1);
+    --pink: rgb(238, 80, 255);
+    --green: rgb(80, 255, 144);
     --oswald: "Oswald";
     --body-bg-color: linear-gradient(90deg, rgb(33, 35, 40) 50%, rgb(28, 31, 36) 65%);
     /* --body-bg-color: linear-gradient(10deg, rgba(6,16,33,1) 60%, rgb(17, 27, 46) 85%); */
+}
+
+* {
+    color: var(--white);
 }
 
 .page-content-split {
@@ -109,7 +115,7 @@
 /*! - - - - - - - */
 
 body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     background: var(--body-bg-color);
     color: var(--white);
     margin: 0;
@@ -263,12 +269,12 @@ body {
     height: fit-content;
     color: var(--white);
     border-radius: 10px;
-    border-color: rgb(238, 80, 255);
+    border-color: var(--pink);
     transition: 200ms;
 }
 
 .contact-submit:hover {
-    border-color: rgb(80, 255, 144);
+    border-color: var(--green);
 }
 
 /*! - - - - - - - */
@@ -323,17 +329,6 @@ body {
     height: 100%;
 }
 
-/**   when screen becomes smaller than 600px reduce font size   */
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 0.5em;
-    }
-
-    h2 {
-        font-size: 1em;
-    }
-}
-
 /*! - - - - - - - */
 /**  Line-Up Page */
 /*! - - - - - - - */
@@ -361,4 +356,87 @@ body {
     max-width: 4em;
     max-height: 4em;
     background-color: red;
+}
+
+/*! - - - - - - - */
+/**   Login Page  */
+/*! - - - - - - - */
+
+.login-top-wrapper h2 {
+    margin: 0 0 1em 0;
+}
+
+.login-top-wrapper {
+    margin-inline: auto;
+    margin-top: 10vh;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+.login-top-wrapper input {
+    border: solid 2px;
+    border-radius: 10px;
+    width: 20em;
+    height: 1.5em;
+    align-self: center;
+    background-color: transparent;
+    padding: 0.5em;
+    color: var(--white);
+    font-family: "Noto Sans";
+}
+
+.login-top-wrapper input::-webkit-input-placeholder {
+    text-align: center;
+    font-weight: 600;
+}
+
+.login-top-wrapper input[type=submit] {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.4em 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: solid var(--pink);
+    font-size: 0.8em;
+    transition: 200ms;
+}
+
+.login-top-wrapper input[type=submit]:hover {
+    border: solid var(--green);
+}
+
+.login-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
+    padding: 3em 4em;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+
+
+
+/**   when screen becomes smaller than 600px reduce font size   */
+@media only screen and (max-width: 600px) {
+    input[type=submit],
+    textarea,
+    input,
+    body {
+        font-size: 0.5em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
 }
