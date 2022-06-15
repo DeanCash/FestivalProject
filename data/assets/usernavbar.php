@@ -1,5 +1,8 @@
 <?php
-    include("utilfunctions.php");
+    require_once("utilfunctions.php");
+    require_once("databaselink.php");
+    check_permission(true);
+    debug_to_console("CLIENT PERMS: ".$_SESSION['permission'], "warn");
 ?>
 
 <nav class="usernav">
@@ -11,7 +14,17 @@
         <!-- <a href="/FestivalProject/data/news.php"><li class="usernav-ul-li"><p>News</p></li></a> -->
         <a href="/FestivalProject/data/line-up.php"><li class="usernav-ul-li"><p>Line-Up</p></li></a>
         <a href="/FestivalProject/data/contact.php"><li class="usernav-ul-li"><p>Contact</p></li></a>
-        <a href="/FestivalProject/data/login.php"><li class="usernav-ul-li"><p>Login</p></li></a>
+        <?php
+            if (check_permission() == "none") {
+                echo "<a href='/FestivalProject/data/login.php'><li class='usernav-ul-li'><p>Login</p></li></a>";
+            }
+            if (check_permission() == "user") {
+                echo "<a href='/FestivalProject/data/account.php'><li class='usernav-ul-li'><p>Account</p></li></a>";
+            }
+            if (check_permission() == "admin") {
+                echo "<a href='/FestivalProject/data/admin.php'><li class='usernav-ul-li'><p>Admin</p></li></a>";
+            }
+        ?>
     </ul>
 </nav>
 

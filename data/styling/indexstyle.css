@@ -115,7 +115,7 @@
 /*! - - - - - - - */
 
 body {
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     background: var(--body-bg-color);
     color: var(--white);
     margin: 0;
@@ -271,10 +271,13 @@ body {
     border-radius: 10px;
     border-color: var(--pink);
     transition: 200ms;
+    text-transform: uppercase;
 }
 
 .contact-submit:hover {
     border-color: var(--green);
+    border-radius: 20px;
+    padding-inline: 2em;
 }
 
 /*! - - - - - - - */
@@ -406,6 +409,8 @@ body {
 
 .login-top-wrapper input[type=submit]:hover {
     border: solid var(--green);
+    padding: 0.4em 1.5em;
+    border-radius: 20px;
 }
 
 .login-half {
@@ -415,6 +420,10 @@ body {
     box-shadow: 0 0 10px 1px rgb(10, 10, 10);
     padding: 3em 4em;
     text-align: center;
+}
+
+.login-half input {
+    padding: 1.3em 1em;
 }
 
 .login-form {

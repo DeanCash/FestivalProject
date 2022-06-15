@@ -1,4 +1,4 @@
-<?php require("assets/databaselink.php"); ?>
+<?php require_once("assets/databaselink.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

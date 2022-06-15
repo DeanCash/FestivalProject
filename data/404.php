@@ -62,7 +62,7 @@
             <p>This Page Doesn't Exist!<br><a href="./index.php">Go Home</a></p>
         </div>
         <?php
-            require("assets/databaselink.php");
+            require_once("assets/databaselink.php");
         
             session_unset();
 
