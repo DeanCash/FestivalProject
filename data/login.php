@@ -1,4 +1,7 @@
-<?php require_once("assets/databaselink.php"); ?>
+<?php
+    require_once("assets/databaselink.php");
+    use queries\selectq;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,16 +35,31 @@
     </div>
 
     <?php
-        if (isset($_POST['SubmitLogin'])) {
-            $login = $_POST['EmailOrUsernameLogin'];
-            $password = $_POST['PasswordLogin'];
-            debug_to_console("$login - $password", "log");
-        }
-        if (isset($_POST['SubmitRegister'])) {
-            $username = $_POST['UsernameRegister'];
-            $email = $_POST['EmailRegister'];
-            $password = $_POST['PasswordRegister'];
-            debug_to_console("$username - $email - $password", "log");
+        if ( isset($_POST['SubmitLogin']) || isset($_POST['SubmitRegister']) ) {
+            $get_accounts_query = selectq::select_all("accounts");
+            $stm = $conn->prepare($get_accounts_query);
+            if ($stm->execute()) {
+                $results = $stm->fetchAll(PDO::FETCH_OBJ);
+
+                if (isset($_POST['SubmitLogin'])) {
+                    $login = $_POST['EmailOrUsernameLogin'];
+                    $password = $_POST['PasswordLogin'];
+                    foreach ($results as $account) {
+                        if ( (($login == $account->name) || ($login == $account->email)) && ($password == $account->password) ) {
+                            // TODO 1 - Fix it so that Hashing gets used for passwords
+                            // TODO 2 - and continue from here
+                            if (1) {
+
+                            }
+                        }
+                    }
+                }
+                if (isset($_POST['SubmitRegister'])) {
+                    $username = $_POST['UsernameRegister'];
+                    $email = $_POST['EmailRegister'];
+                    $password = $_POST['PasswordRegister'];
+                }
+            } else { echo "Something went wrong with getting from the database."; }
         }
     ?>
 

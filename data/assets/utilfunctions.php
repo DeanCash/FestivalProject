@@ -1,6 +1,6 @@
 <?php
 
-require_once("utilqueries.php");
+require_once("dbfunctions.php");
 use queries\selectq;
 
 function check_permission(bool $start_if_no_session = false): string {

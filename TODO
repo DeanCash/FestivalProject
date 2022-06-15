@@ -3,4 +3,6 @@
 [3] - Admin & Account page
 [4] - Line-Up page
 
+[!] - Use hash functions for database checking and inserting accounts
+
 [x] - some other session stuff
