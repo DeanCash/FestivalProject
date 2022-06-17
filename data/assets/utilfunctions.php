@@ -4,6 +4,7 @@ require_once("dbfunctions.php");
 use queries\selectq;
 
 function check_permission(bool $start_if_no_session = false): string {
+    // if set to true, will start a session if one hasn't started yet
     if ($start_if_no_session == true) {
         session_start();
     }
@@ -14,7 +15,13 @@ function check_permission(bool $start_if_no_session = false): string {
         debug_to_console("No Session Active!", "error");
         throw new Exception("Session Required - No Session Active", 1);
     }
-    
+    try {
+        //code...
+    } catch (PDOException $pdoex) {
+        if ($pdoex[1] == 1062) {
+            // double entry
+        }
+    }
     // if permission session variable exists check what value it has
     if (array_key_exists("permission", $_SESSION)) {
         // none is default, meaning not logged in

@@ -1,5 +1,6 @@
 <?php
     require_once("assets/databaselink.php");
+    require_once("assets/utilfunctions.php");
     use queries\selectq;
 ?>
 <!DOCTYPE html>
@@ -45,12 +46,8 @@
                     $login = $_POST['EmailOrUsernameLogin'];
                     $password = $_POST['PasswordLogin'];
                     foreach ($results as $account) {
-                        if ( (($login == $account->name) || ($login == $account->email)) && ($password == $account->password) ) {
-                            // TODO 1 - Fix it so that Hashing gets used for passwords
-                            // TODO 2 - and continue from here
-                            if (1) {
-
-                            }
+                        if ( (($login == $account->name) || ($login == $account->email)) && (password_verify($password, $account->password)) ) {
+                            check_permission();
                         }
                     }
                 }
