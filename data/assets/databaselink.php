@@ -14,6 +14,9 @@
 
     //* DATA = "text"   ||   MODE = [log - warn - error]
 
+    define("LOG", "log");
+    define("WARN", "warn");
+    define("ERROR", "error");
     function debug_to_console(string $data, string $mode)
     {
         if ($mode == "log") {

@@ -12,17 +12,26 @@
     <ul class="usernav-ul">
         <a href="/FestivalProject/data/index.php"><li class="usernav-ul-li"><p>Home</p></li></a>
         <!-- <a href="/FestivalProject/data/news.php"><li class="usernav-ul-li"><p>News</p></li></a> -->
-        <a href="/FestivalProject/data/line-up.php"><li class="usernav-ul-li"><p>Line-Up</p></li></a>
+        <a href="/FestivalProject/data/line-up.php"><li class="usernav-ul-li"><p>Line Up</p></li></a>
+        <a href="/FestivalProject/data/tickets.php"><li class="usernav-ul-li"><p>Webshop</p></li></a>
         <a href="/FestivalProject/data/contact.php"><li class="usernav-ul-li"><p>Contact</p></li></a>
         <?php
             if (check_permission() == "none") {
                 echo "<a href='/FestivalProject/data/login.php'><li class='usernav-ul-li'><p>Login</p></li></a>";
             }
-            if (check_permission() == "user") {
-                echo "<a href='/FestivalProject/data/account.php'><li class='usernav-ul-li'><p>Account</p></li></a>";
+            if (check_permission() == "user" ) {
+                if (basename($_SERVER['PHP_SELF']) == "account.php") {
+                    echo "<a href='/FestivalProject/data/logout.php'><li class='usernav-ul-li'><p>Logout</p></li></a>";
+                } else {
+                    echo "<a href='/FestivalProject/data/account.php'><li class='usernav-ul-li'><p>Account</p></li></a>";
+                }
             }
             if (check_permission() == "admin") {
-                echo "<a href='/FestivalProject/data/admin.php'><li class='usernav-ul-li'><p>Admin</p></li></a>";
+                if (basename($_SERVER['PHP_SELF']) == "admin.php") {
+                    echo "<a href='/FestivalProject/data/logout.php'><li class='usernav-ul-li'><p>Logout</p></li></a>";
+                } else {
+                    echo "<a href='/FestivalProject/data/admin.php'><li class='usernav-ul-li'><p>Admin</p></li></a>";
+                }
             }
         ?>
     </ul>

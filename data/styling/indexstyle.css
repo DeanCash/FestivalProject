@@ -68,7 +68,7 @@
     position: relative;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: fit-content;
     height: 100%;
     flex-direction: row;
     align-items: center;
@@ -104,12 +104,11 @@
     filter: blur(2px);
     transition: 150ms;
 }
-.homelink {
-    margin: 0;
-    padding: 0;
-    border: 0 none;
-    display: flex;
-}
+
+/* .homelink {
+    
+} */
+
 /*! - - - - - - - */
 /**  Index Page  */
 /*! - - - - - - - */
@@ -263,7 +262,7 @@ body {
 .contact-submit {
     font-weight: 600;
     font-family: "Noto Sans";
-    border: 3px solid ;
+    border: 3px solid;
     width: fit-content;
     padding-inline: 1em;
     height: fit-content;
@@ -343,7 +342,7 @@ body {
 }
 .top-lineup-content-wrapper {
     position: relative;
-    margin-top: 8em;
+    margin-top: 6em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -351,14 +350,44 @@ body {
 }
 
 .lineup-content-wrapper {
+    margin-block: 2em;
     display: grid;
-    gap: 2em;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: max(1em, 10vw);
+    row-gap: 4em;
+}
+
+.artist-card > * {
+    text-align: center;
+}
+
+.artist-card:hover {
+    transform: scale(1.05);
 }
 
 .artist-card {
-    max-width: 4em;
-    max-height: 4em;
-    background-color: red;
+    padding: 1.5em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15em;
+    width: 10em;
+    background-color: rgb(36, 41, 48);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: 200ms;
+}
+
+.artist-card-img {
+    position: relative;
+    min-height: 4em;
+    width: 80%;
+}
+
+@media only screen and (max-width: 800px) {
+    .lineup-content-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
 /*! - - - - - - - */
@@ -430,6 +459,188 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+/*! - - - - - - - */
+/**  Artist Page  */
+/*! - - - - - - - */
+
+.artist-content-wrapper {
+    /* border: red solid 2px; */
+    padding: 4em;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4em;
+    display: flex;
+    height: 20em;
+    row-gap: 10em;
+    column-gap: 2em;
+}
+
+.artist-content-text {
+    /* border: cyan solid 2px; */
+    display: flex;
+    align-items: center;
+    flex-basis: 45vw;
+}
+
+.artist-content-text p {
+    margin: 0 0 0 1em;
+}
+
+.artist-content-img-wrapper {
+    /* border: yellow solid 2px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.artist-content-img-shadow {
+    position: absolute;
+    height: 15em;
+    width: 27em;
+    background-color: rgba(10, 10, 10, 0.5);
+    box-shadow: 0 0 15px 0 rgb(10, 10, 10);
+    z-index: 1;
+    transform: rotate(20deg);
+}
+
+.artist-content-img {
+    /* border: green solid 2px; */
+    z-index: 1;
+    height: 15em;
+    width: 27em;
+}
+
+/*! - - - - - - - - - - */
+/**   UserAccount Page  */
+/*! - - - - - - - - - - */
+
+.account-content-wrapper p, 
+.account-content-wrapper h2 {
+    margin: 0;
+}
+.account-content-wrapper {
+    font-size: 1.2em;
+    margin-top: 4em;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-content {
+    background-color: cyan;
+    display: flex;
+    justify-content: space-around;
+}
+
+.account-info {
+    font-weight: 600;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+}
+
+.account-settings {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    padding: 1.5em;
+}
+
+.account-settings form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.account-settings form input {
+    border: solid 2px;
+    padding: 0.4em 0.5em;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.account-settings form input[type=submit] {
+    width: fit-content;
+    padding: 0.4em 0.6em;
+    cursor: pointer;
+}
+
+.passwords {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: translateY(100%);
+    text-align: center;
+    padding-block: 0.5em;
+}
+
+.no-match-error {
+    background-color: red;
+}
+
+.successfully-changed {
+    background-color: green;
+}
+
+.account-winkelwagen-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-winkelwagen-wrapper h2 {
+    margin-block: 1em;
+    font-size: 2em;
+}
+
+.account-winkelwagen {
+    display: grid;
+}
+
+@media only screen and (max-width: 600px) {
+    .account-content {
+        flex-direction: column;
+    }
+}
+
+/*! - - - - - - - - - - */
+/**  AdminAccount Page  */
+/*! - - - - - - - - - - */
+
+
+
+/*! - - - - - - - - */
+/**   Tickets Page  */
+/*! - - - - - - - - */
+
+.tickets-title {
+    text-align: center;
+    margin-block: 3em;
+    font-size: 2em;
+}
+
+.tickets-wrapper {
+    position: relative;
+    display: flex;
+    height: 10em;
+}
+
+.ticket-img {
+    width: 5em;
+    height: 5em;
 }
 
 

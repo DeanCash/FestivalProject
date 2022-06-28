@@ -14,23 +14,19 @@
 
     <div class="top-lineup-content-wrapper">
         <h2 style="font-size: 2em;">Line Up</h2>
-        <p>Here you can view all arists and their concerts, and buy tickets to them</p>
+        <p>Here you can view all arists and their concerts, and buy tickets to their concerts!</p>
         <div class="lineup-content-wrapper">
             <?php
-                // $query = "SELECT * FROM aaa";
-                // $stm = $conn->prepare($query);
-                // if ($stm->execute()) {
-                    // $results = $stm->fetchAll(PDO::FETCH_OBJ);
-                    // foreach ($result as $artist) {
-
-                    // }
-                // }
+                $results = get_all_from_table("lineup", $conn);
+                foreach ($results as $artist) {
+                    echo
+                    "<div class='artist-card'>".
+                        "<div class='artist-card-img' style='background: url($artist->image); background-position: center; background-repeat: no-repeat; background-size: cover; min-width: 20%; height: 100%;'></div>".
+                        "<h3>$artist->artist</h3>".
+                        "<p><a href='artist.php?artistid=$artist->aid'>Visit</a></p>".
+                    "</div>";
+                }
             ?>
-            <div class="artist-card">text</div>
-            <div class="artist-card">text</div>
-            <div class="artist-card">text</div>
-            <div class="artist-card">text</div>
-            <div class="artist-card">text</div>
         </div>
     </div>
 

@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <?php
     require_once("assets/databaselink.php");
     require_once("assets/utilfunctions.php");
     use queries\selectq;
+
+    check_permission(true);
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +21,7 @@
         <div class="login-half">
             <h2>Login</h2>
             <form class="login-form" method="POST">
-                <input required type="text" name="EmailOrUsernameLogin" placeholder="YourEmail@example.com | Username">
+                <input required type="text" name="EmailLogin" placeholder="YourEmail@example.com">
                 <input required type="password" name="PasswordLogin" placeholder="Password">
                 <input type="submit" name="SubmitLogin" value="login">
             </form>
@@ -27,7 +29,6 @@
         <div class="login-half">
             <h2>Register</h2>
             <form class="login-form" method="POST">
-                <input required type="text" name="UsernameRegister" placeholder="Username">
                 <input required type="text" name="EmailRegister" placeholder="YourEmail@example.com">
                 <input required type="password" name="PasswordRegister" placeholder="Password">
                 <input type="submit" name="SubmitRegister" value="register">
@@ -37,26 +38,43 @@
 
     <?php
         if ( isset($_POST['SubmitLogin']) || isset($_POST['SubmitRegister']) ) {
-            $get_accounts_query = selectq::select_all("accounts");
-            $stm = $conn->prepare($get_accounts_query);
-            if ($stm->execute()) {
-                $results = $stm->fetchAll(PDO::FETCH_OBJ);
+            $results = get_all_from_table("accounts", $conn);
 
-                if (isset($_POST['SubmitLogin'])) {
-                    $login = $_POST['EmailOrUsernameLogin'];
-                    $password = $_POST['PasswordLogin'];
-                    foreach ($results as $account) {
-                        if ( (($login == $account->name) || ($login == $account->email)) && (password_verify($password, $account->password)) ) {
-                            check_permission();
+            if (isset($_POST['SubmitLogin'])) {
+                $login = $_POST['EmailLogin'];
+                $password = $_POST['PasswordLogin'];
+                foreach ($results as $account) {
+                    if ( ($login == $account->email) && (password_verify($password, $account->password)) ) {
+                        $current_permission = check_permission(true);
+                        $accountid = $account->uid;
+                        if ($current_permission == NONE && $account->isadmin == 1) {
+                            $_SESSION['permission'] = ADMIN;
+                            $_SESSION['accountid'] = "$accountid";
+                        } else {
+                            $_SESSION['permission'] = USER;
+                            $_SESSION['accountid'] = "$accountid";
                         }
+                        header("location:index.php");
                     }
                 }
-                if (isset($_POST['SubmitRegister'])) {
-                    $username = $_POST['UsernameRegister'];
-                    $email = $_POST['EmailRegister'];
-                    $password = $_POST['PasswordRegister'];
+            }
+            if (isset($_POST['SubmitRegister'])) {
+                $email = $_POST['EmailRegister'];
+                $password = $_POST['PasswordRegister'];
+                $hashed_password = password_hash($password, null);
+
+                $query = "INSERT INTO accounts( email, password ) VALUES 
+                ( '$email','$hashed_password')";
+                
+                $stm = $conn->prepare($query);
+                if ($stm->execute()) {
+                    $current_permission = check_permission(true);
+                    if ( !($current_permission == USER || $current_permission == ADMIN) ) {
+                        $_SESSION['permission'] = USER;
+                    }
+                    header("location:index.php");
                 }
-            } else { echo "Something went wrong with getting from the database."; }
+            }
         }
     ?>
 

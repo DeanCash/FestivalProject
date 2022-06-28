@@ -69,5 +69,7 @@
             session_destroy();
         ?>
     </div>
+
+<script src="scripts/indexscript.js" defer></script>
 </body>
 </html>

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php    
+    require_once("assets/databaselink.php");
+    require_once("assets/utilfunctions.php");
+    
+    check_permission(true);
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
