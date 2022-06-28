@@ -26,7 +26,17 @@
             foreach ($results as $ticket) {
                 echo
                 "<div class='ticket'>".
-                    "<div></div>".
+                    "<form method='POST'>".
+                        "<div>$ticket->price</div>".
+                        "<select>".
+                            "<option value='1'>1</option>".
+                            "<option value='2'>2</option>".
+                            "<option value='3'>3</option>".
+                            "<option value='4'>4</option>".
+                            "<option value='5'>5</option>".
+                        "</select>".
+                    "</form>".
+                    "<div>$ticket->name</div>".
                     "<div class='ticket-img' style='background: url($ticket->ticketimg); background-position: center; background-repeat: no-repeat; background-size: cover;'></div>".
                 "</div>";
             }
