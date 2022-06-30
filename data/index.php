@@ -30,7 +30,7 @@
             <div class="top-content-first-text">A specific artist you are looking for? You can find them and their concerts in the Line-Up page!</div>
         </div>
         <div class="top-content-subclass">
-            <div class="top-content-first-text">If you need to get in contact with us, you can find all the details in the contact page.</div>
+            <div class="top-content-first-text">If you need to get in contact with us, you can do so in the contact page.</div>
             <div class="top-content-first-image-div">
                 <div class="top-content-first-image">
                     <img src="media/festivalimg3.png">
