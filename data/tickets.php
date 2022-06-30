@@ -21,7 +21,7 @@
     <h2 class="tickets-title">Available Tickets</h2>
     <div class="tickets-wrapper">
         <?php
-        
+
             $results = get_all_from_table("tickets", $conn);
             // echo "<pre>".print_r($results)."</pre>";
             foreach ($results as $ticket) {
@@ -35,6 +35,7 @@
                             "<option class='color-black' value='3'>3</option>".
                             "<option class='color-black' value='4'>4</option>".
                             "<option class='color-black' value='5'>5</option>".
+                            "<option class='color-black' value='20'>20</option>".
                         "</select>".
                         "<input class='color-black' type='submit' name='buytickets' value='order'>".
                         "<input hidden type='text' name='cardid' value='$ticket->tid'>".
@@ -47,7 +48,7 @@
     </div>
 
     <?php
-        if (isset($_POST['buytickets'])) {
+        if (isset($_POST['buytickets']) && $clientid != NONE) {
             if ($clientpermission == NONE) {
                 return;
             } else {
