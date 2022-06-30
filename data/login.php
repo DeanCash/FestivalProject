@@ -70,9 +70,16 @@
                 if ($stm->execute()) {
                     $current_permission = check_permission(true);
                     if ( !($current_permission == USER || $current_permission == ADMIN) ) {
+                        $query = "SELECT MAX(uid) AS amount FROM accounts";
+                        $stm = $conn->prepare($query);
+                        if ($stm->execute()) {
+                            $result = $stm->fetch(PDO::FETCH_OBJ);
+                        }
+
                         $_SESSION['permission'] = USER;
+                        $_SESSION['accountid'] = "$result->amount";
+                        header("location:index.php");
                     }
-                    header("location:index.php");
                 }
             }
         }

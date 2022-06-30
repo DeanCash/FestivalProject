@@ -16,17 +16,17 @@
         <a href="/FestivalProject/data/tickets.php"><li class="usernav-ul-li"><p>Webshop</p></li></a>
         <a href="/FestivalProject/data/contact.php"><li class="usernav-ul-li"><p>Contact</p></li></a>
         <?php
-            if (check_permission() == "none") {
+            if (check_permission() == NONE) {
                 echo "<a href='/FestivalProject/data/login.php'><li class='usernav-ul-li'><p>Login</p></li></a>";
             }
-            if (check_permission() == "user" ) {
+            if (check_permission() == USER) {
                 if (basename($_SERVER['PHP_SELF']) == "account.php") {
                     echo "<a href='/FestivalProject/data/logout.php'><li class='usernav-ul-li'><p>Logout</p></li></a>";
                 } else {
                     echo "<a href='/FestivalProject/data/account.php'><li class='usernav-ul-li'><p>Account</p></li></a>";
                 }
             }
-            if (check_permission() == "admin") {
+            if (check_permission() == ADMIN) {
                 if (basename($_SERVER['PHP_SELF']) == "admin.php") {
                     echo "<a href='/FestivalProject/data/logout.php'><li class='usernav-ul-li'><p>Logout</p></li></a>";
                 } else {

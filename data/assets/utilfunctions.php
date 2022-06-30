@@ -67,7 +67,7 @@ function get_client_id(bool $start_if_no_session = false): string {
     if (array_key_exists('accountid', $_SESSION)) {
         return $_SESSION['accountid'];
     } else {
-        return "none";
+        throw new Exception("Accountid session variable doesn't exist!", 1);
     }
     
     return "ERROR";

@@ -517,22 +517,22 @@ body {
     margin: 0;
 }
 .account-content-wrapper {
+    /* background-color: red; */
     font-size: 1.2em;
     margin-top: 4em;
-    background-color: red;
     display: flex;
     flex-direction: column;
 }
 
 .account-content {
-    background-color: cyan;
+    /* background-color: cyan; */
     display: flex;
     justify-content: space-around;
 }
 
 .account-info {
+    /* background-color: green; */
     font-weight: 600;
-    background-color: green;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -542,11 +542,11 @@ body {
 }
 
 .account-settings {
+    /* background-color: orange; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: orange;
     padding: 1.5em;
 }
 
@@ -597,17 +597,40 @@ body {
     align-items: center;
 }
 
-.account-winkelwagen-wrapper h2 {
-    margin-block: 1em;
+.account-winkelwagen-wrapper > h2 {
+    margin-bottom: 1em;
     font-size: 2em;
 }
 
 .account-winkelwagen {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 20em;
+    row-gap: 2em;
+    align-items: center;
+    margin-bottom: 2em;
 }
 
+.account-winkelwagen-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 25em;
+    height: 6em;
+    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
+}
+
+.account-winkelwagen-item p {
+    font-size: 1.3em;
+}
 @media only screen and (max-width: 600px) {
     .account-content {
+        flex-direction: column;
+    }
+
+    .admin-wrapper {
         flex-direction: column;
     }
 }
@@ -616,7 +639,29 @@ body {
 /**  AdminAccount Page  */
 /*! - - - - - - - - - - */
 
+.admin-wrapper {
+    margin-top: 4em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+    row-gap: 2em;
+    flex-wrap: wrap;
+}
 
+.admin-wrapper p,
+.admin-wrapper h2 {
+    text-align: center;
+}
+
+.admin-box {
+    padding: 2em;
+    display: flex;
+    width: 20em;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px 1px rgb(10, 10, 10);
+}
 
 /*! - - - - - - - - */
 /**   Tickets Page  */
@@ -631,21 +676,70 @@ body {
 .tickets-wrapper {
     position: relative;
     display: flex;
-    height: 10em;
+    flex-direction: column;
+    height: fit-content;
+    row-gap: 4em;
+    margin-bottom: 4em;
 }
 
 .ticket-img {
-    width: 5em;
-    height: 5em;
+    width: 10em;
+    height: 10em;
 }
 
 .ticket {
     margin: 0 auto;
     padding: 1.5em;
+    column-gap: 2em;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+    height: 10em;
+    width: 30em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
+
+.ticket form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.ticket form select {
+    background-color: transparent;
+    color: var(--white);
+    border-radius: 5px;
+    border: solid 2px var(--pink);
+    padding: 0.2em;
+}
+
+.ticket form input {
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 2px var(--pink);
+    color: var(--white);
+    padding-block-end: 0.2em;
+    transition: 200ms;
+}
+
+.ticket form input:hover {
+    border-color: var(--green);
+    border-radius: 10px;
+}
+
+.ticket form div {
+    padding: 0.3em;
+    border: solid 3px var(--white);
+    border-radius: 10px;
+}
+
+.color-black {
+    color: black;
+}
+
+
 
 
 

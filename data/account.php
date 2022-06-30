@@ -4,6 +4,7 @@
     require_once("assets/utilfunctions.php");
     use queries\selectq;
 
+    // check the ID of the currently logged in user
     check_permission(true);
     $clientaccountid = get_client_id(true);
 ?>
@@ -32,7 +33,7 @@
         <div class="account-content">
             <div class="account-info">
                 <h2>Your Account:</h2>
-                <p><?php echo "$account->email"; ?></p>
+                <p><?php echo $account->email; ?></p>
             </div>
             <div class="account-settings">
                 <form method="POST">
@@ -50,7 +51,23 @@
             <div class="account-winkelwagen">
                 <?php
                     // TODO
-                    // tickets echo'en in account winkelwagen
+                    $results = get_all_from_table("purchases", $conn);
+                    foreach ($results as $purchase) {
+                        if ($purchase->customerid == $clientaccountid) {
+                            $query = "SELECT * FROM tickets WHERE tid='$purchase->ticketid'";
+                            $stm = $conn->prepare($query);
+                            if ($stm->execute()) {
+                                $ticket = $stm->fetch(PDO::FETCH_OBJ);
+                                $totalPrice = $ticket->price * $purchase->amount;
+                                echo
+                                "<div class='account-winkelwagen-item'>".
+                                    "<p>$purchase->amount x $ticket->name</p>".
+                                    "<h2>$$totalPrice</h2>".
+                                "</div>";
+                            }
+
+                        }
+                    }
                 ?>
             </div>
         </div>
